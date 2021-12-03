@@ -2,26 +2,22 @@ package codigo;
 
 import java.awt.Color;
 
+import acm.graphics.GImage;
 import acm.graphics.GObject;
 import acm.graphics.GOval;
 
-public class Bola extends GOval{
+public class Bola5 extends GImage{
 	int dx = 1; //velocidad en el eje x
 	int dy = 1; //velocidad en el eje y
 
-	public Bola(double width, double height) {
-		super(width, height);	
+	public Bola5(String name, double x, double y) {
+		super(name, x, y);	
 	}
 
-	public Bola(double width, double height, Color c) {
-		super(width, height);
-		this.setFillColor(c);
-		this.setFilled(true);
-	}
 
 	public void muevete(Arkanoid ark){
 		//rebote con el suelo y rebote con el techo
-		if (getY() > ark.getHeight() || getY() < 10){
+		if (getY() < 10){
 			dy = dy * -1;
 		}
 
